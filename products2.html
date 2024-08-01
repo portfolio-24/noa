@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="架空アパレルサイトページ　ポートフォリオ">
+    <title>NOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@700&family=Shippori+Mincho&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
+    <link rel="stylesheet" href="style.css ">
+</head>
+<body>
+    <header id="header">
+
+        <h1 class="site-title"><a href="index.html"> NOA</a></h1>
+
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+
+                <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                <input type="checkbox" id="drawer_input" class="drawer_hidden">
+    
+                 <!-- ハンバーガーアイコン -->
+                <label for="drawer_input" class="drawer_open"><span></span></label>
+    
+                <!-- メニュー -->
+                <nav class="nav_content">
+                    <ul class="nav_list">
+                        <li class="nav_item"><a href="products.html">item</a></li>
+                        <li class="nav_item"><a href="index.html#news">news</a></li>
+                        <li class="nav_item"><a href="shop info.html">infomation</a></li>
+                        <li class="nav_item"><a href="contact.html">contact</a></li>
+                    </ul>
+                </nav>
+            </div>      
+    </header>
+
+    <main>
+
+        <section id="products" class="wrapper">
+            <h2 class="sec-title">Products.</h2>
+            <div class="line"><span></span></div>
+
+            <ul class="products-list">
+                
+                <li>
+                    <a href="item13.html">
+                        <img src="img/item13.jpg" alt="商品イメージ">
+                        <p>プロダクトテキスト</p>
+                        <p>&yen;9,999 +tax</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="item14.html">
+                        <img src="img/item14.jpg" alt="商品イメージ">
+                        <p>プロダクトテキスト</p>
+                        <p>&yen;9,999 +tax</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="item15.html">
+                        <img src="img/item15.jpg" alt="商品イメージ">
+                        <p>プロダクトテキスト</p>
+                        <p>&yen;9,999 +tax</p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="pagination">
+                <li><a href="products.html"> 1</a></li>
+                <li>2</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="footer" class="wrapper">
+        <p class="copyright">&copy; NOA.portfolio</p>
+    </footer>
+    
+</body>
+</html>

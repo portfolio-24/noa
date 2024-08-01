@@ -1,0 +1,689 @@
+@charset "UTF-8";
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight:400;
+    font-size: 13px;
+    color: #31373e;
+    line-height: 1.5; 
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*---comon---*/
+.wrapper{
+    max-width: 1200px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+.sec-title{
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 1;  /*？*/
+}
+
+.line span{
+    display: block;
+    content: "";
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);  /*親要素の幅以上に広げる*/
+    height: 100px;
+    background: rgba(136, 193, 123, .4);
+    top: -8px;
+    position: relative;  /*位置そのまま*/
+    z-index: -1;
+}
+
+/*---header---*/
+#header{
+    max-width: 1250px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.site-title{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Noto Serif Georgian", serif;
+    text-align: center;
+    padding: 11px 0;
+}
+
+.drawer_hidden{
+    display: none;
+}
+
+.nav{
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+/*横線スペース*/
+.drawer_open{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+    position: fixed;
+    right: 40px;
+}
+
+/*横線*/
+.drawer_open span,
+.drawer_open span::before{
+    content: "";
+    height: 5px;
+    width: 22px;
+    border-radius: 5px;
+    background: #31373e;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    position: absolute;
+}
+
+/*上の線*/
+.drawer_open span::before{
+    bottom: 7px;
+}
+
+/*×の動き*/
+#drawer_input:checked ~ .drawer_open span::before{
+    bottom: 0;
+    transform: rotate(90deg);
+    background: #fff;
+    transition: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+#drawer_input:checked ~ .drawer_open span{
+    transform: rotate(-45deg);
+    background: #fff;
+    transition: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.nav_content{
+    background: rgba(184, 218, 176, .8);
+    width: 350px;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right:-350px;
+    transition: 0.5s;
+    padding: 50px;
+}
+
+.nav_list{
+    margin: 35px 0 0 20px;
+}
+
+.nav_item{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    display: block;
+    transition: all .3s ease 0s;
+}
+
+.nav_item:hover{
+    transform: scale(1.1);
+}
+
+#drawer_input:checked ~ .nav_content{
+    right: 0;
+}
+
+/*---メインビジュアル---*/
+.mainvisual{
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-bottom: 130px;
+}
+
+/*---about---*/
+#about{
+    margin: 0 auto 170px auto;
+}
+
+.flex{
+    position: relative;
+    top: -30px;
+}
+
+.flex-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.flex-item:nth-child(2n){
+    flex-direction: row-reverse;
+}
+
+.flex-item .about-img{
+    max-width: 440px;
+}
+
+/*横線*/
+.about-phrase{
+    position: relative;
+}
+
+.flex-item:nth-child(odd) .about-phrase::before{
+    content: "";
+    width: 300px;
+    height: 1px;
+    background: #c7c6c6;
+    position: absolute;
+    top: 25px;
+    left: -240px;
+}
+
+.flex-item:nth-child(even) .about-phrase::after{
+    content: "";
+    width: 300px;
+    height: 1px;
+    background: #c7c6c6;
+    position: absolute;
+    top: 25px;
+    right: -240px;
+}
+
+.flex-item:nth-child(even) .about-phrase{
+    padding-right: 80px;
+}
+
+.about-phrase{
+   margin-top: 200px;
+   padding-left: 80px;
+}
+
+
+
+.about-phrase,.about-text{
+    font-family: "Shippori Mincho", serif;
+    font-size: 21px;
+}
+
+.about-text{
+    text-align: center;
+    margin: 100px 0 80px 0;
+}
+
+#about .logo{
+    font-family: "Noto Serif Georgian", serif;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.noa-phrase{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*----products----*/
+#products{
+    margin-bottom: 85px;
+}
+
+.products-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 55px;
+    column-gap: 15px;
+    position: relative;
+    top: -30px;
+}
+
+.products-list img{
+    width: 100%;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.link-text{
+    display: block;
+    margin-top: 65px;
+    font-size: 18px;
+    text-align: right;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.pagination li {
+    padding: 0 20px; 
+}
+
+/*----news----*/
+#news dl{
+    max-width: 830px;
+    margin: 0 auto 270px auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #c7c6c6;
+    position: relative;
+    top: -30px;
+}
+
+#news dt{
+    width: 20%;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #c7c6c6;
+}
+
+#news dd{
+    width: 80%;
+    font-size: 17px;
+    padding: 10px;
+    border-bottom: 1px solid #c7c6c6;
+}
+
+/*-----shop info----*/
+.info{
+    position: relative;
+    top: -30px;
+    margin-bottom: 170px;
+}
+
+.info-item{
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+.info-item p{
+    font-size: 15px;
+}
+
+.info-item .sec{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.info-item iframe{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+/*---contact---*/
+#contact{
+    margin-bottom: 170px;
+}
+
+#contact dl{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0 70px 0;
+    padding: 0 150px;
+}
+
+#contact dt{
+    font-weight: 400;
+    font-size: 15px;
+    width: 15%;
+}
+
+#contact dd{
+    width: 85%;
+    margin-bottom: 10px;
+}
+
+#contact dd input,
+#contact dd textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c8c8c8;
+}
+
+#contact dd textarea{
+    height: 160px;
+}
+
+#contact .btn{
+    text-align: center;
+}
+
+#contact .btn input{
+    width: 120px;
+    background-color: #c8c8c8;
+    color: #fff;
+    padding: 10px 0;
+    border: 1px solid #c8c8c8;
+}
+
+#contact .btn input:hover{
+    background-color: #fff;
+    color: #c8c8c8;
+}
+
+/*----item----*/
+#item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 170px;
+    padding: 0 100px;
+}
+
+.item-img{
+    /*flex-shrink: 0;*/
+    width: 470px;
+    margin-right: 65px;
+}
+
+.item-img img{
+    width: 100%;
+}
+
+.item-info{
+    width: 45%;
+}
+
+.item-info p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.item-info .item-title{
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+}
+
+#item .item-info .order-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#item .item-info .order-table .color,
+#item .item-info .order-table .size {
+    width: 20%;
+}
+#item .item-info .order-table .quantity {
+    width: 60%;
+}
+
+#item .item-info .order-table td {
+    border-top: solid 1px #c3c3c3;
+  }
+
+#item .item-info .order-table th,
+#item .item-info .order-table td {
+    font-weight: normal;
+    padding: 10px;
+    border-right: solid 1px #c3c3c3;
+    text-align: center;
+}
+
+#item .item-info .order-table th:last-child,
+#item .item-info .order-table td:last-child {
+  border-right: none;
+}
+
+#item .item-info .order-table select {
+    width: 100%;
+    border: solid 1px #c3c3c3;
+    padding: 0 10px;
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+  }
+  #item .item-info .cart-btn {
+    width: 100%;
+    background-color: #b8dab0;
+    color: #fff;
+    display: block;
+    line-height: 1;
+    padding: 18px 0;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #b8dab0;
+  }
+
+  #item .item-info .cart-btn:hover{
+      background-color: #fff;
+      color: #88bb7c;
+  }
+
+  #item .item-info .size-table {
+    width: 100%;
+  }
+  #item .item-info .size-table .size {
+    width: 16%;
+  }
+  #item .item-info .size-table .chest,
+  #item .item-info .size-table .weist,
+  #item .item-info .size-table .height {
+    width: 28%;
+  }
+  #item .item-info .size-table th {
+    background-color: #ecebeb;
+  }
+
+#item .item-info .size-table th,
+#item .item-info .size-table td {
+    font-weight: normal;
+    padding: 10px;
+    border: solid 1px #c3c3c3;
+    text-align: center;
+}
+
+
+/*-----footer-----*/
+.copyright{
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+@media screen and (max-width: 900px){
+
+    .wrapper{
+        max-width: 100%;
+    }
+
+    .sec-title{
+        font-size: 18px;
+    }
+
+    .line span{
+        height: 40px;
+    }
+
+    /*---header---*/
+    .site-title{
+        font-size: 22px;
+        padding: 7px 0;
+    }
+
+    #header{
+        height: 50px;
+    }
+
+    .nav_content{
+        width: 100vw;
+        right: -100vw;
+    }
+
+    .drawer_open span{
+        top: 20px;
+    }
+
+    /*---メインビジュアル---*/
+    .mainvisual{
+        margin-bottom: 50px;
+    }
+
+    /*---about---*/
+    #about{
+        margin-bottom: 60px;
+    }
+
+    .flex{
+        top: 0;
+    }
+
+    .flex-item{
+        flex-direction: column;
+    }
+
+    .flex-item:nth-child(2n){
+        flex-direction: column;
+    }
+
+    .flex-item:nth-child(odd) .about-phrase::before{
+        top: 18px;
+        left: -230px;
+    }
+
+    .flex-item:nth-child(even) .about-phrase::after{
+        top: 18px;
+        right: -140px;
+    }
+
+    .about-phrase{
+        margin:30px 0 25px 0;
+    }
+
+    .about-phrase,.about-text{
+        font-size: 15px;
+    }
+
+    .about-img{
+        max-width: 100%;
+    }
+
+    .about-text{
+        font-size: 13px;
+        margin: 60px 0 60px 0;
+    }
+
+    #about .logo{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .noa-phrase{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    /*---products---*/
+    #products{
+        margin-bottom: 60px;
+    }
+
+    .products-list{
+        top: 0px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+    }
+
+    .link-text{
+        font-size: 15px;
+    }
+
+    /*---news---*/
+    #news dl{
+        max-width: 100%;
+        flex-direction: column;
+        top: 0;
+        margin-bottom: 60px;
+    }
+
+    #news dt{
+        width: 100%;
+        border: none;
+        padding: 7px 7px 0 7px;
+        font-size: 15px;
+    }
+
+    #news dd{
+        width: 100%;
+        padding: 0 7px 7px 7px;
+        font-size: 15px;
+    }
+
+    /*---shop info---*/
+    .info{
+        margin-bottom: 60px;
+    }
+
+    .info-item p{
+        font-size: 13px;
+    }
+
+    /*---contact---*/
+    #contact{
+        margin-bottom: 60px;
+    }
+
+    #contact dl{
+        flex-direction: column;
+        padding: 0;
+        margin: 30px 0 30px 0;
+    }
+
+    #contact dt{
+        width: 100%;
+        font-size: 13px;
+    }
+
+    #contact dd{
+        width: 100%;
+    }
+
+    /*---item---*/
+    #item{
+        flex-direction: column;
+        padding: 0 5%;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .item-img{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .item-info{
+        width: 100%;
+    }
+
+    .item-info p{
+        font-size: 13px;
+    }
+
+    .item-info .item-title{
+        font-size: 17px;
+        height: 40px;
+    }
+}
